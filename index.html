@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sales Data Analysis Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body{font-family:Arial;background:#f4f6f8;padding:20px}
+h1{text-align:center}
+.cards{display:flex;gap:15px;justify-content:center}
+.card{background:white;padding:20px;border-radius:10px;width:200px;text-align:center;box-shadow:0 2px 8px #ccc}
+.card h2{color:#2b7cff}
+.box{background:white;padding:20px;border-radius:10px;margin:20px auto;max-width:800px}
+</style>
+</head>
+<body>
+<h1>Sales Data Analysis Dashboard</h1>
+
+<div class="cards">
+<div class="card"><p>Total Sales</p><h2>₹1,25,000</h2></div>
+<div class="card"><p>Total Orders</p><h2>350</h2></div>
+<div class="card"><p>Average Order Value</p><h2>₹357</h2></div>
+</div>
+
+<div class="box">
+<h3>Monthly Sales Trend</h3>
+<canvas id="lineChart"></canvas>
+</div>
+
+<div class="box">
+<h3>Top 5 Selling Products</h3>
+<canvas id="barChart"></canvas>
+</div>
+
+<script>
+new Chart(document.getElementById('lineChart'),{
+type:'line',
+data:{labels:['Jan','Feb','Mar','Apr','May','Jun'],
+datasets:[{label:'Sales',data:[15000,18000,22000,19000,25000,26000],borderColor:'#2b7cff',fill:false}]}
+});
+new Chart(document.getElementById('barChart'),{
+type:'bar',
+data:{labels:['Laptop','Mobile','Headphones','Watch','Keyboard'],
+datasets:[{label:'Sales',data:[40000,35000,20000,15000,15000],backgroundColor:'#2b7cff'}]}
+});
+</script>
+</body>
+</html>
